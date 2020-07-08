@@ -1,7 +1,7 @@
 # express-hasura_ra-cb-menu
-# This project uses postgres as a database for a React-admin data provider.
-## Please note this is currently in development and not yet full operational. 
-### This project uses hasura for the front-end database queries and express JS for backend business logic.
+# This project uses Postgres as a database for a React-Admin data provider.
+## Please note this is currently in development and not yet fully operational. 
+### This project uses Hasura for the front-end database queries and Express-JS for backend business logic.
 ### It's all built in docker and uses bash scripts to create and init the database
 ### An nginx reverse proxy configuration is included
 ### The project is to build a dashboard for a real-life burger resturant that will allow the staff to edit the menu. 
@@ -10,13 +10,21 @@ Please note: Although I am a seasoned tech guy I am quite a novice as a develope
 Having said that you are welcome to lodge support Issues here and I will help you as much as I can. I am currently unemployed so have oodles of free-time to
 learn to code and to help others learn.
 
+We use Ubuntu 20.04 as a dev environment. We also run virtual-box with Ubuntu 20.04 as a guest for a testing environment. How you setup your environment is a matter of personal preference. 
+This project uses [ra-data-hasura-graphql](https://github.com/Steams/ra-data-hasura-graphql) as a data provider.
+- [postgraphile](https://www.graphile.org/postgraphile/)
+- [React-Admin](https://github.com/marmelab/react-admin)
 
-This project uses [ra-data-hasura-graphql](https://github.com/Steams/ra-data-hasura-graphql) as a dataprovider.
+The back-end uses [express](https://github.com/auth0/express), [express-jwt](https://github.com/auth0/express-jwt) and [express-jwt-authz](https://github.com/auth0/express-jwt-authz).
 
 
-The back-end uses [Express](https://github.com/auth0/express), [Express-jwt](https://github.com/auth0/express-jwt) and [express-jwt-authz](https://github.com/auth0/express-jwt-authz).
+## Prerequisites
 
+- [Docker Engine](https://docs.docker.com/engine/) (version `19.03.11`)
+- [Docker Compose](https://docs.docker.com/compose/) (version `1.25.0`)
+- [nodejs](https://nodejs.org/en/) (version `v14.50.0`)
 
+Install nodejs 14.5.0 from [nodesource](https://github.com/nodesource/distributions/blob/master/README.md)
 
 
 
