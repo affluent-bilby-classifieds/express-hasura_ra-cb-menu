@@ -204,6 +204,9 @@ the tables with example data.
 
 All containers should now be up, and you can go to http://localhost:3000 in your browser.
 
+To access the hasura console you can go to http://localhost:8080/console
+
+note: please substitute localhost for the IP address of your VM if you are using one.
 
 
 
