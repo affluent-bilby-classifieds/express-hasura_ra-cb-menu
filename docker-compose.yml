@@ -40,7 +40,7 @@ services:
 
 
   postgres:
-    image: postgres:10.6
+    image: postgres:10.13
     environment:
       POSTGRES_DB: ${PG_DATABASE}
       POSTGRES_USER: ${PG_USER}
