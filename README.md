@@ -1,15 +1,17 @@
+# express-hasura_ra-cb-menu
 # This project uses postgres as a database for a React-admin data provider.
+## Please note this is currently in development and not yet full operational. 
+### This project uses hasura for the front-end database queries and express JS for backend business logic.
+### It's all built in docker and uses bash scripts to create and init the database
+### An nginx reverse proxy configuration is included
+### The project is to build a dashboard for a real-life burger resturant that will allow the staff to edit the menu. 
 
-Please note: Although I am a seasoned tech guy I am quite a novice as a developer. If my code is broken please see the [original project](https://github.com/francoisruty/fruty_react-admin) by Fruty. Here is his [Blog post](https://fruty.io/2020/01/15/building-business-apps-with-react-admin/).
-
-Having said that you are welcome to lodge support Issues here and I will help you as much as I can.
-
-
-I have now decided to backport the changes I have made from [react-admin-and-postgraphile-playground](https://github.com/affluent-bilby-classifieds/react-admin-and-postgraphile-playground) so the docker configuration will get updated to include the scripts and resources in that project accordingly.
+Please note: Although I am a seasoned tech guy I am quite a novice as a developer.
+Having said that you are welcome to lodge support Issues here and I will help you as much as I can. I am currently unemployed so have oodles of free-time to
+learn to code and to help others learn.
 
 
-
-This project uses [ra-data-simple-rest](https://github.com/marmelab/react-admin/tree/master/packages/ra-data-simple-rest) for the data privider. That wasn't obvious to me at first. You will find the source code in the readme is very similar to the code used here.
+This project uses [ra-data-hasura-graphql](https://github.com/Steams/ra-data-hasura-graphql) as a dataprovider.
 
 
 The back-end uses [Express](https://github.com/auth0/express), [Express-jwt](https://github.com/auth0/express-jwt) and [express-jwt-authz](https://github.com/auth0/express-jwt-authz).
@@ -26,13 +28,13 @@ The first step is to 'git clone' the repo.
 In this case:
 
 ```
-git clone https://github.com/affluent-bilby-classifieds/prisma_ra-cb-menu.git
+git clone https://github.com/affluent-bilby-classifieds/express-hasura_ra-cb-menu.git
 ```
 
 change to the directory:
 
 ```
-cd prisma_ra-cb-menu
+cd express-hasura_ra-cb-menu
 ```
 
 
@@ -109,7 +111,7 @@ docker-compose up -d
 Create a new user:
 
 ```
-curl -X POST http://localhost:3000/api/create_user -H 'Cache-Control: no-cache' -H 'Content-Type: application/json' -d '{ "email": "test@test.fr", "password": "Password1" }'
+curl -X POST http://localhost:3000/api/create_user -H 'Cache-Control: no-cache' -H 'Content-Type: application/json' -d '{ "email": "test@test.com", "password": "Password1" }'
 ```
 
 You should get:

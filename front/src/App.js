@@ -1,36 +1,35 @@
-// in src/App.js
-import React from 'react';
-import {fetchUtils, Admin, Resource} from 'react-admin';
+// in App.js
+import React, { Component } from 'react';
+import buildHasuraProvider from 'ra-data-hasura-graphql';
+import { Admin, Resource } from 'react-admin';
 import { ItemList, ItemEdit, ItemCreate } from './items';
-import authProvider from './authProvider';
-import { ContactList, ContactEdit, ContactCreate } from './Contacts'
 
-import simpleRestProvider from 'ra-data-simple-rest';
 
-const httpClient = (url, options = {}) => {
-    if (!options.headers) {
-        options.headers = new Headers({ Accept: 'application/json' });
+
+class App extends Component {
+    constructor() {
+        super();
+        this.state = { dataProvider: null };
     }
-    const token = localStorage.getItem('token');
-    options.headers.set('Authorization', `Bearer ${token}`);
-    const email = localStorage.getItem('email');
-    options.headers.set('email', `${email}`);
-    return fetchUtils.fetchJson(url, options);
+    componentDidMount() {
+        buildHasuraProvider({
+            clientOptions: { uri: 'http://localhost:8081' },
+        }).then((dataProvider) => this.setState({ dataProvider }));
+    }
+
+    render() {
+        const { dataProvider } = this.state;
+
+        if (!dataProvider) {
+            return <div>Loading</div>;
+        }
+
+        return (
+            <Admin dataProvider={dataProvider}>
+                <Resource name="items" list={ItemList} edit={ItemEdit} create={ItemCreate} />
+            </Admin>
+        );
+    }
 }
-
-const dataProvider = simpleRestProvider(window.location.origin + '/api', httpClient);
-
-const App = () => (
-  <Admin dataProvider={dataProvider} authProvider={authProvider}>
-    <Resource name="items" list={ItemList} edit={ItemEdit} create={ItemCreate} />
-    
-    <Resource
-                    name="contacts"
-                    list={ContactList}
-                    edit={ContactEdit}
-                    create={ContactCreate}
-                />
-  </Admin>
-);
 
 export default App;
