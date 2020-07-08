@@ -13,7 +13,7 @@ class App extends Component {
     }
     componentDidMount() {
         buildHasuraProvider({
-            clientOptions: { uri: 'http://localhost:8081' },
+            clientOptions: { uri: 'http://localhost:8080' },
         }).then((dataProvider) => this.setState({ dataProvider }));
     }
 
