@@ -188,7 +188,7 @@ Start-docker containers again:
 ```
 docker-compose up -d
 ```
-Create a new user:
+Create a new user using the Express JS api app written by Fruty:
 
 ```
 curl -X POST http://localhost:3000/api/create_user -H 'Cache-Control: no-cache' -H 'Content-Type: application/json' -d '{ "email": "test@test.com", "password": "Password1" }'
