@@ -61,7 +61,7 @@ services:
       - postgres
 
   graphql-engine:
-    image: hasura/graphql-engine:latest
+    image: hasura/graphql-engine:v1.0.0-beta.6
     container_name: hasura
     ports:
     - "8080:8081"
