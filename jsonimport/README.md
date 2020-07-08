@@ -11,17 +11,17 @@ Inside the container now run:
 
 
 ```
-psql --username=fruty
+psql --username=postgres
 
 ```
 
 ```
-fruty=# create database menudb;
+postgres=# create database menudb;
 CREATE DATABASE
 ```
 
 ```
-fruty=# grant all privileges on database menudb to fruty;
+postgres=# grant all privileges on database menudb to postgres;
 GRANT
 ```
 ```
@@ -46,44 +46,44 @@ Now we are loading the JSON into a Postgres JSONB column all thanks to the guide
 cat menuItems.json | jq -cr '.[]' | sed 's/\\[tn]//g' > output.json
 ```
 ```
-psql -h localhost -p 5432 menudb -U fruty -c "CREATE TABLE menu (data jsonb);"
+psql -h localhost -p 5432 menudb -U postgres -c "CREATE TABLE menu (data jsonb);"
 ```
 
 ```
-cat output.json | psql -h localhost -p 5432 menudb -U fruty -c "COPY menu (data) FROM STDIN;"
+cat output.json | psql -h localhost -p 5432 menudb -U postgres -c "COPY menu (data) FROM STDIN;"
 ```
 
 Now we check the json has been imported to the jsonb table OK.
 
 ```
-psql --username=fruty
+psql --username=postgres
 
 ```
 
 
 ```
-fruty=# \l
+postgres=# \l
                              List of databases
    Name    | Owner | Encoding |  Collate   |   Ctype    | Access privileges 
 -----------+-------+----------+------------+------------+-------------------
- fruty     | fruty | UTF8     | en_US.utf8 | en_US.utf8 | 
- menudb    | fruty | UTF8     | en_US.utf8 | en_US.utf8 | 
- template0 | fruty | UTF8     | en_US.utf8 | en_US.utf8 | =c/fruty         +
-           |       |          |            |            | fruty=CTc/fruty
- template1 | fruty | UTF8     | en_US.utf8 | en_US.utf8 | =c/fruty         +
-           |       |          |            |            | fruty=CTc/fruty
+ postgres     | postgres | UTF8     | en_US.utf8 | en_US.utf8 | 
+ menudb    | postgres | UTF8     | en_US.utf8 | en_US.utf8 | 
+ template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres         +
+           |       |          |            |            | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres         +
+           |       |          |            |            | postgres=CTc/postgres
 (4 rows)
 
 ```
 
 ```
-fruty=# \c menudb
-You are now connected to database "postgres" as user "fruty".
+postgres=# \c menudb
+You are now connected to database "postgres" as user "postgres".
 menudb=# \dt
        List of relations
  Schema | Name | Type  | Owner 
 --------+------+-------+-------
- public | menu | table | fruty
+ public | menu | table | postgres
 (1 row)
 ```
 
@@ -112,13 +112,13 @@ Don't forget to quit:
 if you need to export the database such as to send to a third party provider:
 
 ```
-pg_dump -d menudb -U fruty -t menu > file.sql
+pg_dump -d menudb -U postgres -t menu > file.sql
 ```
 then
 
 ```
-docker cp fruty_ra-cb-menu_postgres_1:/file.sql .
+docker cp postgres_ra-cb-menu_postgres_1:/file.sql .
 ```
 
-assuminging fruty_ra-cb-menu_postgres_1 is the name of your postgres docker container. 
+assuminging postgres_ra-cb-menu_postgres_1 is the name of your postgres docker container. 
 This copies the sql file to your current directory.
