@@ -13,7 +13,7 @@ class App extends Component {
     }
     componentDidMount() {
         buildHasuraProvider({
-            clientOptions: { uri: 'http://localhost:8080' },
+            clientOptions: { uri: 'http://localhost:8080/v1/graphql' },
         }).then((dataProvider) => this.setState({ dataProvider }));
     }
 

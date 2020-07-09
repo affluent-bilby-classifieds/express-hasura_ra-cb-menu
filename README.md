@@ -228,8 +228,9 @@ API calls to the back docker container, without messing with front dev server pa
 to make Dockerfiles for front and back (front Dockerfile would use among other things "npm run build" command), build those docker containers and use them in docker-compose.yml, instead of mapping source code inside containers with docker filesystem mappings + installing manually dependencies.
 
 ### Credits
-[Francois Ruty](https://github.com/francoisruty)
+[Francois Ruty](https://github.com/francoisruty)-
+
 [fruty_react-admin](https://github.com/francoisruty/fruty_react-admin)
-Thank you for creating the initial project and being an inspiration. I am grateful for all your help.
+Thank you for creating the initial project and writing a lot of very high quality code. I also want to thank you for being an inspiration. I am grateful for all your help. You are a tremendous asset to the open-source community.
 
 
