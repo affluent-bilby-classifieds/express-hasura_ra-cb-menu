@@ -208,10 +208,12 @@ You will likely find that react-admin cannot access Hasura. This is because we n
 
 From the ra-data-hasura-graphql readme.md file it says:
 
-```
+
 Authentication
 
 To send authentication headers, declare your own apollo client.
+
+```
 
 import ApolloClient from 'apollo-boost';
 
