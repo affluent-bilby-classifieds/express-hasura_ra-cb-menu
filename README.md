@@ -204,9 +204,42 @@ the tables with example data.
 
 All containers should now be up, and you can go to http://localhost:3000 in your browser.
 
+You will likely find that react-admin cannot access Hasura. This is because we need to enable the authentication.
+
+From the ra-data-hasura-graphql readme.md file it says:
+
+```
+Authentication
+
+To send authentication headers, declare your own apollo client.
+
+import ApolloClient from 'apollo-boost';
+
+const client = new ApolloClient({
+  uri: 'http://localhost:8080/v1/graphql',
+  headers: {
+    'x-hasura-admin-secret': `myadminsecretkey`,
+    // 'Authorization': `Bearer xxxx`,
+  }
+});
+
+// When building your provider inside your component
+// set up the client like this
+buildHasuraProvider({ client })
+```
+
+To further clarify this. "Bearer" is part of the OAuth2.0 Authorization Scheme.
+
+Please see: 
+[Authentication using JWT](https://hasura.io/docs/1.0/graphql/manual/auth/authentication/jwt.html)
+[Hasura Authentication Explained](https://hasura.io/blog/hasura-authentication-explained/)
+[The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)
+
+
 To access the hasura console you can go to http://localhost:8080/console
 
 note: please substitute localhost for the IP address of your VM if you are using one.
+
 
 
 
