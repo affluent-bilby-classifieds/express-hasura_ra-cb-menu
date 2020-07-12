@@ -235,7 +235,7 @@ To further clarify this. "Bearer" is part of the OAuth2.0 Authorization Scheme.
 Please see: 
 [Authentication using JWT](https://hasura.io/docs/1.0/graphql/manual/auth/authentication/jwt.html)\
 [Hasura Authentication Explained](https://hasura.io/blog/hasura-authentication-explained/)\
-[The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)\
+[The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)
 
 
 To access the hasura console you can go to http://localhost:8080/console
