@@ -230,9 +230,9 @@ const client = new ApolloClient({
 buildHasuraProvider({ client })
 ```
 
-To further clarify this. "Bearer" is part of the OAuth2.0 Authorization Scheme.
+To further clarify this "Bearer" is part of the OAuth2.0 Authorization Scheme.
 
-Please see: 
+Please see:\
 [Authentication using JWT](https://hasura.io/docs/1.0/graphql/manual/auth/authentication/jwt.html)\
 [Hasura Authentication Explained](https://hasura.io/blog/hasura-authentication-explained/)\
 [The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)
