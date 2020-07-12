@@ -12,7 +12,6 @@ learn to code and to help others learn.
 
 We use Ubuntu 20.04 as a dev environment. We also run virtual-box with Ubuntu 20.04 as a guest for a testing environment. How you setup your environment is a matter of personal preference. 
 This project uses [ra-data-hasura-graphql](https://github.com/Steams/ra-data-hasura-graphql) as a data provider.
-- [postgraphile](https://www.graphile.org/postgraphile/)
 - [React-Admin](https://github.com/marmelab/react-admin)
 
 The back-end uses [express](https://github.com/auth0/express), [express-jwt](https://github.com/auth0/express-jwt) and [express-jwt-authz](https://github.com/auth0/express-jwt-authz).
