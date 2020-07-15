@@ -40,7 +40,7 @@ const client = new ApolloClient({
       // 'Authorization': `Bearer xxxx`,
     }
   });
-  
+  const link = middlewareLink.concat(httpLink);
   // When building your provider inside your component
   // set up the client like this
   buildHasuraProvider({
@@ -51,4 +51,13 @@ const client = new ApolloClient({
         })
       );
 /* end test  */
+
+/* result when building test code: 
+Failed to compile.
+
+./src/App.js
+  Line 47:32:  'link' is not defined                 no-undef
+  Line 50:25:  'enhanceDataProvider' is not defined  no-undef */
+
+
 export default App;
