@@ -284,6 +284,9 @@ You should see something like this:
 
 Now if you enter the passowrd set in the docker-compose.yml file e.g. "myadminsecretkey" (without the quotes) you will be back into your hasura console.
 
+Next we need to update this in our Apollo client code so that react-admin can access Hasura too. 
+
+
 
 
 
