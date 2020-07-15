@@ -307,6 +307,8 @@ API calls to the back docker container, without messing with front dev server pa
 - do NOT use this setup in production! This is a dev environment! For production you would have
 to make Dockerfiles for front and back (front Dockerfile would use among other things "npm run build" command), build those docker containers and use them in docker-compose.yml, instead of mapping source code inside containers with docker filesystem mappings + installing manually dependencies.
 
+- All the default passwords need to be changed before production!
+
 ### Credits
 [Francois Ruty](https://github.com/francoisruty)-
 
