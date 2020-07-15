@@ -55,8 +55,8 @@ const client = new ApolloClient({
 /* result when building test code: 
 Failed to compile.
 
-./src/App.js
-  Line 47:32:  'link' is not defined                 no-undef
+ Line 43:16:  'middlewareLink' is not defined       no-undef
+  Line 43:38:  'httpLink' is not defined             no-undef
   Line 50:25:  'enhanceDataProvider' is not defined  no-undef */
 
 
