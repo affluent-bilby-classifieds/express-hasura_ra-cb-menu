@@ -33,6 +33,9 @@ class App extends Component {
     }
 }
 /* testing this code  */
+
+const httpLink = createHttpLink({ uri: 'http://hasura:8080/v1/graphql' });
+
 const client = new ApolloClient({
     uri: 'http://hasura:8080/v1/graphql',
     headers: {
