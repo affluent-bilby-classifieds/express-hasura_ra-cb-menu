@@ -34,7 +34,7 @@ class App extends Component {
 }
 /* testing this code  */
 const client = new ApolloClient({
-    uri: 'http://localhost:8080/v1/graphql',
+    uri: 'http://hasura:8080/v1/graphql',
     headers: {
       'x-hasura-admin-secret': `myadminsecretkey`,
       // 'Authorization': `Bearer xxxx`,
