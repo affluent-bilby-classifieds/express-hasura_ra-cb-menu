@@ -203,6 +203,11 @@ the tables with example data.
 
 All containers should now be up, and you can go to http://localhost:3000 in your browser.
 
+To access the hasura console you can go to http://localhost:8080/console
+
+note: please substitute localhost for the IP address of your VM if you are using one.
+
+
 You will likely find that react-admin cannot access Hasura. This is because we need to enable the authentication.
 
 From the ra-data-hasura-graphql readme.md file it says:
@@ -237,10 +242,45 @@ Please see:\
 [The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)\
 [React-Admin is sending an unresolved promise as JWT to Hasura #2](https://github.com/hasura/ra-data-hasura/issues/23)
 
+For now we are just going to enable to secret key.
 
-To access the hasura console you can go to http://localhost:8080/console
+In your terminal go to your project folder and edit the docker-compose.yml file.
 
-note: please substitute localhost for the IP address of your VM if you are using one.
+```
+vi docker-compose.yml
+```
+
+press ESC i (for insert)
+
+Go down to where it says:
+```
+## uncomment next line to set an admin secret
+      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+```
+Put your cursor just before the hash (to uncomment the line) and press x twice. Now pres ESC wq to exit and write to the file.
+
+Now run the following to start the containers again:
+
+```
+docker-compose up -d
+```
+
+if you get and error like
+```
+ERROR: yaml.parser.ParserError: while parsing a block mapping
+  in "./docker-compose.yml", line 72, column 7
+expected <block end>, but found '<block mapping start>'
+  in "./docker-compose.yml", line 76, column 8
+  ```
+
+  You need to check the docker-compose.yml file to ensure the indentation is correct.
+
+Once the docker containers have restarted please try the hasura console again.
+http://localhost:8080/console (or the ip of your VM instead of localhost)
+
+![Hasura console asking for secret key](key.png)
+
+
 
 
 
