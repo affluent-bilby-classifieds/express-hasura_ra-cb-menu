@@ -278,9 +278,11 @@ expected <block end>, but found '<block mapping start>'
 Once the docker containers have restarted please try the hasura console again.
 http://localhost:8080/console (or the ip of your VM instead of localhost)
 
+You should see something like this:
+
 ![Hasura console asking for secret key](key.png)
 
-
+Now if you enter the passowrd set in the docker-compose.yml file e.g. "myadminsecretkey" (without the quotes) you will be back into your hasura console.
 
 
 
