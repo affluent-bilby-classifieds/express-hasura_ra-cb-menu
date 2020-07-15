@@ -265,7 +265,7 @@ Now run the following to start the containers again:
 docker-compose up -d
 ```
 
-if you get and error like
+if you get an error like this:
 ```
 ERROR: yaml.parser.ParserError: while parsing a block mapping
   in "./docker-compose.yml", line 72, column 7
