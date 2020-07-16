@@ -237,10 +237,12 @@ buildHasuraProvider({ client })
 To further clarify this "Bearer" is part of the [OAuth2.0 Authorization Scheme.](https://auth0.com/docs/protocols/oauth2)
 
 Please see:\
+[Set up a GraphQL client with Apollo](https://hasura.io/learn/graphql/react/apollo-client/)
 [Authentication using JWT](https://hasura.io/docs/1.0/graphql/manual/auth/authentication/jwt.html)\
 [Hasura Authentication Explained](https://hasura.io/blog/hasura-authentication-explained/)\
 [The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)\
 [React-Admin is sending an unresolved promise as JWT to Hasura #2](https://github.com/hasura/ra-data-hasura/issues/23)
+
 
 For now we are just going to enable to secret key.
 
