@@ -34,33 +34,30 @@ class App extends Component {
 }
 /* testing this code  */
 
-const httpLink = createHttpLink({ uri: 'http://hasura:8080/v1/graphql' });
-
-const client = new ApolloClient({
-    uri: 'http://hasura:8080/v1/graphql',
-    headers: {
+componentDidMount() {
+  const httpLink = createHttpLink({ uri: 'http://hasura:8080/v1/graphql' });
+  const middlewareLink = new ApolloLink((operation, forward) => {
+    operation.setContext({
+      headers: {
       'x-hasura-admin-secret': `myadminsecretkey`,
-      // 'Authorization': `Bearer xxxx`,
-    }
+        /* Authorization: "Bearer " + yourToken, // <--- SET THE TOKEN */
+      },
+    });
+    return forward(operation);
   });
+
+  // use with apollo-client
   const link = middlewareLink.concat(httpLink);
-  // When building your provider inside your component
-  // set up the client like this
+
   buildHasuraProvider({
-        clientOptions: { link: link },
-      }).then((dataProvider) =>
-        this.setState({
-          dataProvider: enhanceDataProvider(dataProvider),
-        })
-      );
+    clientOptions: { link: link },
+  }).then((dataProvider) =>
+    this.setState({
+      dataProvider: enhanceDataProvider(dataProvider),
+    })
+  );
 /* end test  */
 
-/* result when building test code: 
-Failed to compile.
-
- Line 43:16:  'middlewareLink' is not defined       no-undef
-  Line 43:38:  'httpLink' is not defined             no-undef
-  Line 50:25:  'enhanceDataProvider' is not defined  no-undef */
 
 
 export default App;
