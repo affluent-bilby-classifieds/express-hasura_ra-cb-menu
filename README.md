@@ -311,6 +311,8 @@ to make Dockerfiles for front and back (front Dockerfile would use among other t
 
 - All the default passwords need to be changed before production!
 
+- We probably should be using: uri: process.env.REACT_APP_GRAPHQL_ENDPOINT 
+
 ### Credits
 [Francois Ruty](https://github.com/francoisruty)-
 
