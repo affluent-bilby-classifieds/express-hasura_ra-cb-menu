@@ -17,9 +17,12 @@
     "react-router-dom": "5.1.0",
     "react-scripts": "3.0.0",
     "graphql": "14.7.0",
-    "ra-data-hasura-graphql":"0.1.12"
+    "ra-data-hasura-graphql": "0.1.12"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-plugin-react": "^7.20.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
