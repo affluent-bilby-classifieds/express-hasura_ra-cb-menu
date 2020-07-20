@@ -16,7 +16,7 @@ class App extends Component {
     componentDidMount() {
       buildHasuraProvider({ clientOptions: {
          uri: 'http://hasura:8080/v1/graphql',
-         headers: {'x-hasura-admin-secret': 'myadminsecretkey'},  
+         headers: {'x-hasura-admin-secret': `myadminsecretkey`},  
         } })
         .then(dataProvider => this.setState({ dataProvider }));
     }
