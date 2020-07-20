@@ -258,7 +258,7 @@ componentDidMount() {
     }
 ```
 
-For a full-list of Apollo client options please see: [ApolloClientOptions](https://www.apollographql.com/docs/react/api/core/ApolloClient/#ApolloClientOptions)at Apollodocs.
+For a full-list of Apollo client options please see: [ApolloClientOptions](https://www.apollographql.com/docs/react/api/core/ApolloClient/#ApolloClientOptions) at Apollodocs.
 
 
 In your terminal go to your project folder and edit the docker-compose.yml file.
