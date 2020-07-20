@@ -244,6 +244,9 @@ Please see:\
 [The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)\
 [React-Admin is sending an unresolved promise as JWT to Hasura #2](https://github.com/hasura/ra-data-hasura/issues/23)
 
+
+For now we are just going to enable the secret key.
+
 So we use the following code in our App.js file:
 ```
 componentDidMount() {
@@ -256,7 +259,7 @@ componentDidMount() {
 ```
 
 
-For now we are just going to enable to secret key.
+
 
 In your terminal go to your project folder and edit the docker-compose.yml file.
 
